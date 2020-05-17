@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "508596511150",
+    "firebase_url": "https://firestorebasic-46630.firebaseio.com",
+    "project_id": "firestorebasic-46630",
+    "storage_bucket": "firestorebasic-46630.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508596511150:android:f063593ff7378ddd2da83f",
+        "android_client_info": {
+          "package_name": "com.eldisprojectexpert.firestorebasic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508596511150-hb71rih6ik0chs9qp12j35cj5ffbj005.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5X0WpVQpedFE1Mfm8ZyQ0Ru1smX7hR04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508596511150-hb71rih6ik0chs9qp12j35cj5ffbj005.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
