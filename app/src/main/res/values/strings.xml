@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FirestoreBasic</string>
+    <string name="click">Text Click</string>
 </resources>
