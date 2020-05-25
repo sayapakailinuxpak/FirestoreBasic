@@ -25,9 +25,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MainActivity extends AppCompatActivity{
     EditText editTextTitle, editTextDesc;
     Button buttonSave;
@@ -63,8 +60,11 @@ public class MainActivity extends AppCompatActivity{
                     return;
                 }
                 if (documentSnapshot.exists()){
-                    String title = documentSnapshot.getString(KEY_TITLE);
-                    String desc = documentSnapshot.getString(KEY_DESCRIPTION);
+//                    String title = documentSnapshot.getString(KEY_TITLE);
+//                    String desc = documentSnapshot.getString(KEY_DESCRIPTION);
+                    NoteModel noteModel = documentSnapshot.toObject(NoteModel.class);
+                    String title = noteModel.getTitle();
+                    String desc = noteModel.getDescription();
 
                     textViewData.setText("Title : " + title + "\n" + "Desc : " + desc);
                 } else {
@@ -80,12 +80,14 @@ public class MainActivity extends AppCompatActivity{
         String title = editTextTitle.getText().toString().trim();
         String desc = editTextDesc.getText().toString().trim();
 
-        Map<String, Object> map = new HashMap<>();
-        map.put(KEY_TITLE, title);
-        map.put(KEY_DESCRIPTION, desc);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put(KEY_TITLE, title);
+//        map.put(KEY_DESCRIPTION, desc);
+
+        NoteModel noteModel = new NoteModel(title, desc);
 
 //        firebaseFirestore.document("NoteCollection/MyNoteDocument");
-        firebaseFirestore.collection("NotesCollection").document("MyNoteDocument").set(map)
+        firebaseFirestore.collection("NotesCollection").document("MyNoteDocument").set(noteModel)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
